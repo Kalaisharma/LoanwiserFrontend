@@ -467,8 +467,12 @@ const kkValues = data.Kalai.find(item => item.KK !== undefined)?.KK.split(",");}
       )}
       ;
       <div className="footer">
-        <button className="back footerbutton" onClick={() => OnBack()}>Back</button>
-        <button className="next footerbutton" onClick={()=>OnNext()}>Next</button>
+        <button className="back footerbutton" onClick={() => OnBack()}>
+          Back
+        </button>
+        <button className="next footerbutton" onClick={() => OnNext()}>
+          Next
+        </button>
       </div>
       <div className="float" ref={floatcontainer}>
         {popupview && (
@@ -494,7 +498,9 @@ const kkValues = data.Kalai.find(item => item.KK !== undefined)?.KK.split(",");}
               <button className="save footerbutton2" onClick={Savethename}>
                 Save
               </button>
-              <button className="cancel footerbutton2">Cancel</button>
+              <button className="cancel footerbutton2" onClick={onclosedocs}>
+                Cancel
+              </button>
             </div>
           </div>
         )}
@@ -523,7 +529,9 @@ const kkValues = data.Kalai.find(item => item.KK !== undefined)?.KK.split(",");}
               <button className="save footerbutton2" onClick={Savethedocname}>
                 Save
               </button>
-              <button className="cancel footerbutton2">Cancel</button>
+              <button className="cancel footerbutton2" onClick={onclosedocs}>
+                Cancel
+              </button>
             </div>
           </div>
         )}
