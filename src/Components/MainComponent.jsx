@@ -72,7 +72,6 @@ function MainComponent() {
     }
   };
   const deleteUser = (name) => {
-    alert("User deleted" + name);
     const updatedUsers = allusers.filter((user) => user !== name);
     setallusers(updatedUsers);
 
@@ -85,7 +84,10 @@ console.log(showfiledetails);
     delete docsStorage[name];
   };
   const changeactivename = (e) => {
-    setactivedocs("");
+    if (docsStorage[e?.currentTarget?.id].length > 0) {
+      setactivedocs(docsStorage[e?.currentTarget?.id][0]);
+    }
+      setactivedocs("");
     setactivename(e?.currentTarget?.id);
     Object.values(namecontainerref.current).forEach((el) => {
       if (el) el.style.backgroundColor = "rosybrown"; // Reset to default color
@@ -96,7 +98,7 @@ console.log(showfiledetails);
 
   const changeactivedocs = (e) => {
     setactivedocs(e?.currentTarget.id);
-    alert(e.currentTarget.id);
+    // alert(e.currentTarget.id);
     //   const kkObject = docsStorage[activename]?.find((item) => e.currentTarget.id in item); // Checking whether the key is present in the object
     // if (kkObject) {
     //     console.log("KK Object:", kkObject);
@@ -200,7 +202,7 @@ console.log(showfiledetails);
       //   size: Math.round(file.size / 1024) + "KB",
       // });
 
-      alert(activedocs);
+      // alert(activedocs);
       setdocsStorage((prevData) => {
         const existingDocs = prevData[activename] || []; // Get existing docs or empty array
 
