@@ -382,6 +382,10 @@ console.log(showfiledetails);
       }
     }
   };
+  const onapplicantclosedocs = () => {
+    setpopupview(false);
+    maincontainer.current.style.backgroundColor = "beige";
+  };
   return (
     <div className="maincontainer" ref={maincontainer}>
       <h1>Loan Wiser</h1>
@@ -498,7 +502,7 @@ const kkValues = data.Kalai.find(item => item.KK !== undefined)?.KK.split(",");}
               <button className="save footerbutton2" onClick={Savethename}>
                 Save
               </button>
-              <button className="cancel footerbutton2" onClick={onclosedocs}>
+              <button className="cancel footerbutton2" onClick={onapplicantclosedocs}>
                 Cancel
               </button>
             </div>
