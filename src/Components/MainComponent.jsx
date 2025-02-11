@@ -14,13 +14,9 @@ function MainComponent() {
   const floatcontainer = useRef();
   const [naming, setname] = useState("");
   const [allusers, setallusers] = useState([]);
-  const [usersdocs, setusersdocs] = useState([]);
+  // const [usersdocs, setusersdocs] = useState([]);
   const [docsStorage, setdocsStorage] = useState({});
-  const [FileDetails, SetFileDetails] = useState({
-    name: "",
-    type: "",
-    size: "",
-  });
+  
   const [showfiledetails, setshowfiledetails] = useState(false);
   const [activename, setactivename] = useState("");
   const [activedocs, setactivedocs] = useState("");
@@ -39,7 +35,7 @@ function MainComponent() {
     } else {
       setnodocs(false);
     }
-  }, [usersdocs, docsStorage, activedocs, checkalert]);
+  }, [docsStorage, activedocs, checkalert,activename]);
   const addingapplicant = () => {
     setpopupview(true);
     maincontainer.current.style.backgroundColor = "#D9C3A3";
@@ -84,6 +80,7 @@ function MainComponent() {
     if (updatedUsers.length === 0) {
       setmaincontentview(false);
     }
+console.log(showfiledetails);
 
     delete docsStorage[name];
   };
